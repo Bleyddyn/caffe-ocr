@@ -122,7 +122,6 @@ training_images/T/ComicSansMS-8--2.png 29
 training_images/Q/TimesNewRoman-4-2.png 26
 training_images/R/Verdana-4-3.png 27
 training_images/D/Georgia-6-1.png 13
-training_images/1/TimesNewRoman-10-4.png 1
 training_images/M/TrebuchetMS-4-3.png 22
 training_images/X/ArialBlack-5-2.png 33
 training_images/9/Arial-6-5.png 9
@@ -1359,7 +1358,6 @@ training_images/X/Georgia-3-0.png 33
 training_images/T/Arial-7-2.png 29
 training_images/R/Arial-6-2.png 27
 training_images/Q/Arial-4-3.png 26
-training_images/1/TimesNewRoman-10-3.png 1
 training_images/K/Georgia-3-0.png 20
 training_images/V/TrebuchetMS-5-2.png 31
 training_images/P/Arial-5-5.png 25
@@ -2414,7 +2412,6 @@ training_images/7/ComicSansMS-4-1.png 7
 training_images/B/CourierNew-6-6.png 11
 training_images/V/Verdana-8-2.png 31
 training_images/M/CourierNew-8-6.png 22
-training_images/1/TimesNewRoman-10-1.png 1
 training_images/T/ArialBlack-3--2.png 29
 training_images/1/Impact-8-2.png 1
 training_images/8/Verdana-8-2.png 8
