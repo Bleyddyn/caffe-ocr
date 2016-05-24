@@ -23,4 +23,4 @@ max_iter: 1300
 snapshot: 100
 snapshot_prefix: "alpha"
 # solver mode: CPU or GPU
-solver_mode: GPU
+solver_mode: CPU

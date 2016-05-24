@@ -14,6 +14,9 @@
 		A12B878C1CF4C680007F4E60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12B878B1CF4C680007F4E60 /* Images.xcassets */; };
 		A12B878F1CF4C680007F4E60 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12B878D1CF4C680007F4E60 /* MainMenu.xib */; };
 		A12B879B1CF4C680007F4E60 /* OCRGenerateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A12B879A1CF4C680007F4E60 /* OCRGenerateTests.m */; };
+		A12B87A61CF4D624007F4E60 /* OGGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A12B87A51CF4D624007F4E60 /* OGGenerator.m */; };
+		A12B87A91CF4D74B007F4E60 /* OGFilelist.m in Sources */ = {isa = PBXBuildFile; fileRef = A12B87A81CF4D74B007F4E60 /* OGFilelist.m */; };
+		A12B87AC1CF4EDE9007F4E60 /* OGPair.m in Sources */ = {isa = PBXBuildFile; fileRef = A12B87AB1CF4EDE9007F4E60 /* OGPair.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		A12B87941CF4C680007F4E60 /* OCRGenerateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCRGenerateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12B87991CF4C680007F4E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A12B879A1CF4C680007F4E60 /* OCRGenerateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCRGenerateTests.m; sourceTree = "<group>"; };
+		A12B87A41CF4D624007F4E60 /* OGGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGGenerator.h; sourceTree = "<group>"; };
+		A12B87A51CF4D624007F4E60 /* OGGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGGenerator.m; sourceTree = "<group>"; };
+		A12B87A71CF4D74B007F4E60 /* OGFilelist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGFilelist.h; sourceTree = "<group>"; };
+		A12B87A81CF4D74B007F4E60 /* OGFilelist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGFilelist.m; sourceTree = "<group>"; };
+		A12B87AA1CF4EDE9007F4E60 /* OGPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGPair.h; sourceTree = "<group>"; };
+		A12B87AB1CF4EDE9007F4E60 /* OGPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGPair.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +98,12 @@
 				A12B878B1CF4C680007F4E60 /* Images.xcassets */,
 				A12B878D1CF4C680007F4E60 /* MainMenu.xib */,
 				A12B877E1CF4C680007F4E60 /* Supporting Files */,
+				A12B87A41CF4D624007F4E60 /* OGGenerator.h */,
+				A12B87A51CF4D624007F4E60 /* OGGenerator.m */,
+				A12B87A71CF4D74B007F4E60 /* OGFilelist.h */,
+				A12B87A81CF4D74B007F4E60 /* OGFilelist.m */,
+				A12B87AA1CF4EDE9007F4E60 /* OGPair.h */,
+				A12B87AB1CF4EDE9007F4E60 /* OGPair.m */,
 			);
 			path = OCRGenerate;
 			sourceTree = "<group>";
@@ -220,8 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A12B87871CF4C680007F4E60 /* Document.m in Sources */,
+				A12B87A91CF4D74B007F4E60 /* OGFilelist.m in Sources */,
+				A12B87A61CF4D624007F4E60 /* OGGenerator.m in Sources */,
 				A12B87841CF4C680007F4E60 /* main.m in Sources */,
 				A12B87821CF4C680007F4E60 /* AppDelegate.m in Sources */,
+				A12B87AC1CF4EDE9007F4E60 /* OGPair.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

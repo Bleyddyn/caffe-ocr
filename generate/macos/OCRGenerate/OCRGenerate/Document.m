@@ -7,6 +7,8 @@
 //
 
 #import "Document.h"
+#import "OGGenerator.h"
+#import "OGFilelist.h"
 
 @interface Document ()
 
@@ -50,6 +52,30 @@
     // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
     [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
     return YES;
+}
+
+- (IBAction)chooseDirectory:(id)sender
+{
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseDirectories:YES];
+    [panel setAllowsMultipleSelection:NO];
+    [panel setCanChooseFiles:NO];
+
+    [panel beginSheetModalForWindow:mainWindow completionHandler:^(NSInteger result)
+     {
+         if( NSFileHandlingPanelOKButton == result )
+         {
+             NSArray *urls = [panel URLs];
+             NSURL *url = [urls objectAtIndex:0];
+             if( [url isFileURL] )
+             {
+                 generator = [[OGGenerator alloc] initWithDirectory:[url path]];
+                 [directoryField setStringValue:[generator directory]];
+                 [trainingFileField setStringValue:[[generator trainingList] path]];
+                 [testFileField setStringValue:[[generator testList] path]];
+             }
+         }
+     }];
 }
 
 @end

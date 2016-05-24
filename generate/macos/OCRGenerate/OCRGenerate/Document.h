@@ -8,8 +8,19 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface Document : NSDocument
+@class OGGenerator;
 
+@interface Document : NSDocument
+{
+    IBOutlet NSWindow *mainWindow;
+    IBOutlet NSTextField *directoryField;
+    IBOutlet NSTextField *testFileField;
+    IBOutlet NSTextField *trainingFileField;
+    
+    OGGenerator *generator;
+}
+
+- (IBAction)chooseDirectory:(id)sender;
 
 @end
 
