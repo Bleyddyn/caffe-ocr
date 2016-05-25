@@ -78,4 +78,27 @@
      }];
 }
 
+- (IBAction)chooseFont:(id)sender
+{
+    NSFontPanel *fontPanel = [NSFontPanel sharedFontPanel];
+//    [fontExampleField setStringValue:@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.?,'\""];
+    [fontExampleField setStringValue:@"abcd"];
+    [mainWindow makeFirstResponder:fontExampleField];
+    [fontPanel makeKeyAndOrderFront:sender];
+}
+
+- (void)changeFont:(id)sender
+{
+    NSFont *oldFont = [fontExampleField font];
+    NSFont *newFont = [sender convertFont:oldFont];
+    [fontExampleField setFont:newFont];
+    [fontNameField setStringValue:[newFont description]];
+}
+
+- (IBAction)generate:(id)sender
+{
+    NSFont *oldFont = [fontExampleField font];
+    NSArray *images = [generator generateFromString:[fontExampleField stringValue] withFont:oldFont];
+    [imageView setImage:[images objectAtIndex:0]];
+}
 @end

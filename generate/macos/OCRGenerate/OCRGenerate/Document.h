@@ -17,10 +17,16 @@
     IBOutlet NSTextField *testFileField;
     IBOutlet NSTextField *trainingFileField;
     
+    IBOutlet NSTextField *fontNameField;
+    IBOutlet NSTextField *fontExampleField;
+    IBOutlet NSImageView *imageView;
+    
     OGGenerator *generator;
 }
 
 - (IBAction)chooseDirectory:(id)sender;
+- (IBAction)chooseFont:(id)sender;
+- (IBAction)generate:(id)sender;
 
 @end
 

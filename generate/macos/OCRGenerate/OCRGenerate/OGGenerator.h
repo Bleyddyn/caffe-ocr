@@ -6,7 +6,7 @@
 //  Copyright (c) 2016 CaffeOCR. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @class OGFilelist;
 
@@ -23,6 +23,8 @@
 @property (readwrite,retain) OGFilelist *testList;
 
 - (id)initWithDirectory:(NSString *)dir;
+
+- (NSArray *)generateFromString:(NSString *)chars withFont:(NSFont *)font;
 
 // list of fonts
 // list of characters?
