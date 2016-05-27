@@ -18,7 +18,10 @@
 
 - (id)initWithPath:(NSString *)inpath;
 - (BOOL)readFromPath:(NSString *)inpath;
+- (BOOL)writeToPath:(NSString *)inpath;
+- (BOOL)save;
 
+- (NSNumber *)labelForPath:(NSString *)inpath;
 - (BOOL)containsPath:(NSString *)inpath;
 - (void)addPath:(NSString *)inpath withValue:(NSNumber *)value;
 - (void)removePath:(NSString *)inpath;

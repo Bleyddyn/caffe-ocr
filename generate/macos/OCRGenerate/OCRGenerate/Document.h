@@ -21,6 +21,9 @@
     IBOutlet NSTextField *fontExampleField;
     IBOutlet NSImageView *imageView;
     
+    IBOutlet NSButton *chooseFontButton;
+    IBOutlet NSButton *generateButton;
+    
     OGGenerator *generator;
 }
 

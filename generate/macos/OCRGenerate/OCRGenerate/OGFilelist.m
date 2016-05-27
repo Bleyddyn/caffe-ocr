@@ -71,8 +71,49 @@
     return YES;
 }
 
+- (BOOL)writeToPath:(NSString *)inpath
+{
+    NSURL *URL = [NSURL fileURLWithPath:inpath];
+    NSError *error = nil;
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingToURL:URL error:&error];
+    if( !fileHandle )
+        return NO;
+    
+    for( OGPair *entry in [self files] )
+    {
+        NSString *line = [NSString stringWithFormat:@"%@ %d\n", [entry first], [[entry second] intValue]];
+        [fileHandle writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    [fileHandle closeFile];
+    
+    return YES;
+}
+
+- (BOOL)save
+{
+    return [self writeToPath:[self path]];
+}
+
+- (NSNumber *)labelForPath:(NSString *)inpath
+{
+    for( OGPair *entry in [self files] )
+    {
+        if( [inpath isEqualToString:[entry first]] )
+            return [entry second];
+    }
+    
+    return nil;
+}
+
 - (BOOL)containsPath:(NSString *)inpath
 {
+    for( OGPair *entry in [self files] )
+    {
+        if( [inpath isEqualToString:[entry first]] )
+            return YES;
+    }
+    
     return NO;
 }
 

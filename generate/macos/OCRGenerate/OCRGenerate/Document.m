@@ -9,6 +9,7 @@
 #import "Document.h"
 #import "OGGenerator.h"
 #import "OGFilelist.h"
+#import "OGPair.h"
 
 @interface Document ()
 
@@ -27,6 +28,10 @@
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController {
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
+    NSFont *oldFont = [fontExampleField font];
+    [fontNameField setStringValue:[oldFont description]];
+    [chooseFontButton setEnabled:NO];
+    [generateButton setEnabled:NO];
 }
 
 + (BOOL)autosavesInPlace {
@@ -73,6 +78,9 @@
                  [directoryField setStringValue:[generator directory]];
                  [trainingFileField setStringValue:[[generator trainingList] path]];
                  [testFileField setStringValue:[[generator testList] path]];
+                 [fontExampleField setStringValue:[generator labelString]];
+                 [chooseFontButton setEnabled:YES];
+                 [generateButton setEnabled:YES];
              }
          }
      }];
@@ -82,7 +90,7 @@
 {
     NSFontPanel *fontPanel = [NSFontPanel sharedFontPanel];
 //    [fontExampleField setStringValue:@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.?,'\""];
-    [fontExampleField setStringValue:@"abcd"];
+    //[fontExampleField setStringValue:@"abcd"];
     [mainWindow makeFirstResponder:fontExampleField];
     [fontPanel makeKeyAndOrderFront:sender];
 }
@@ -98,7 +106,16 @@
 - (IBAction)generate:(id)sender
 {
     NSFont *oldFont = [fontExampleField font];
-    NSArray *images = [generator generateFromString:[fontExampleField stringValue] withFont:oldFont];
-    [imageView setImage:[images objectAtIndex:0]];
+    NSArray *images = [generator generateLabelsForFont:oldFont];
+    OGPair *next = [OGPair pairWithFirst:images second:[NSNumber numberWithUnsignedInteger:0]];
+    [self showImages:next];
+    //[imageView setImage:[images objectAtIndex:0]];
+}
+
+- (void)showImages:(OGPair *)args
+{
+    [imageView setImage:[[args first] objectAtIndex:[[args second] unsignedIntegerValue]]];
+    OGPair *next = [OGPair pairWithFirst:[args first] second:[NSNumber numberWithUnsignedInteger:[[args second] unsignedIntegerValue]+1]];
+    [self performSelector:@selector(showImages:) withObject:next afterDelay:1.0];
 }
 @end

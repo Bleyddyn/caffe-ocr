@@ -21,9 +21,13 @@
 @property (readwrite,retain) NSString *directory;
 @property (readwrite,retain) OGFilelist *trainingList;
 @property (readwrite,retain) OGFilelist *testList;
+@property (readwrite,retain) OGFilelist *labels;
 
 - (id)initWithDirectory:(NSString *)dir;
 
+- (NSString *)labelString;
+
+- (NSArray *)generateLabelsForFont:(NSFont *)font;
 - (NSArray *)generateFromString:(NSString *)chars withFont:(NSFont *)font;
 
 // list of fonts
